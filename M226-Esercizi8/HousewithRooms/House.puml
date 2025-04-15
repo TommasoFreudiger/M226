@@ -1,0 +1,28 @@
+@startuml
+
+class House {
+        - String indirizzo
+        - List Rooms
+
+        + House(String indirizzo)
+        + void showHouse()
+        + void addRoom()
+        + void superficieHouse()
+    }
+
+class Room {
+        - String nome
+        - double superficie
+        - RoomType roomtype
+
+        + Room(double superficie, String nome, RoomType roomtype)
+        + String toString()
+    }
+
+class RoomType {
+        + enum RoomType
+    }
+
+    House "1" <-- "many"  Room
+    Room "1" <-- "many"  RoomType
+@enduml
